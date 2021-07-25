@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31521.260
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IUWP", "IUWP\IUWP.csproj", "{F8177ABA-AEF4-4203-AB9F-79769F0D71AD}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Cabinet.Shared", "Cabinet.Shared\Cabinet.Shared.shproj", "{113C95B3-1CBB-4B02-8BFE-8A623AD67F85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cabinet.UWP", "Cabinet.UWP\Cabinet.UWP.csproj", "{8E7B7EB3-114B-48C4-8987-38E63DDCA09D}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Cabinet.Shared\Cabinet.Shared.projitems*{113c95b3-1cbb-4b02-8bfe-8a623ad67f85}*SharedItemsImports = 13
+		Cabinet.Shared\Cabinet.Shared.projitems*{8e7b7eb3-114b-48c4-8987-38e63ddca09d}*SharedItemsImports = 4
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug-10240|ARM = Debug-10240|ARM
+		Debug-14500|ARM = Debug-14500|ARM
+		Release-10240|ARM = Release-10240|ARM
+		Release-14500|ARM = Release-14500|ARM
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8177ABA-AEF4-4203-AB9F-79769F0D71AD}.Debug-10240|ARM.ActiveCfg = Debug-10240|ARM
+		{F8177ABA-AEF4-4203-AB9F-79769F0D71AD}.Debug-10240|ARM.Build.0 = Debug-10240|ARM
+		{F8177ABA-AEF4-4203-AB9F-79769F0D71AD}.Debug-10240|ARM.Deploy.0 = Debug-10240|ARM
+		{F8177ABA-AEF4-4203-AB9F-79769F0D71AD}.Debug-14500|ARM.ActiveCfg = Debug-15400|ARM
+		{F8177ABA-AEF4-4203-AB9F-79769F0D71AD}.Debug-14500|ARM.Build.0 = Debug-15400|ARM
+		{F8177ABA-AEF4-4203-AB9F-79769F0D71AD}.Debug-14500|ARM.Deploy.0 = Debug-15400|ARM
+		{F8177ABA-AEF4-4203-AB9F-79769F0D71AD}.Release-10240|ARM.ActiveCfg = Release-10240|ARM
+		{F8177ABA-AEF4-4203-AB9F-79769F0D71AD}.Release-10240|ARM.Build.0 = Release-10240|ARM
+		{F8177ABA-AEF4-4203-AB9F-79769F0D71AD}.Release-10240|ARM.Deploy.0 = Release-10240|ARM
+		{F8177ABA-AEF4-4203-AB9F-79769F0D71AD}.Release-14500|ARM.ActiveCfg = Release-15400|ARM
+		{F8177ABA-AEF4-4203-AB9F-79769F0D71AD}.Release-14500|ARM.Build.0 = Release-15400|ARM
+		{F8177ABA-AEF4-4203-AB9F-79769F0D71AD}.Release-14500|ARM.Deploy.0 = Release-15400|ARM
+		{8E7B7EB3-114B-48C4-8987-38E63DDCA09D}.Debug-10240|ARM.ActiveCfg = Debug-10240|ARM
+		{8E7B7EB3-114B-48C4-8987-38E63DDCA09D}.Debug-10240|ARM.Build.0 = Debug-10240|ARM
+		{8E7B7EB3-114B-48C4-8987-38E63DDCA09D}.Debug-14500|ARM.ActiveCfg = Debug-15400|ARM
+		{8E7B7EB3-114B-48C4-8987-38E63DDCA09D}.Debug-14500|ARM.Build.0 = Debug-15400|ARM
+		{8E7B7EB3-114B-48C4-8987-38E63DDCA09D}.Release-10240|ARM.ActiveCfg = Release-10240|ARM
+		{8E7B7EB3-114B-48C4-8987-38E63DDCA09D}.Release-10240|ARM.Build.0 = Release-10240|ARM
+		{8E7B7EB3-114B-48C4-8987-38E63DDCA09D}.Release-14500|ARM.ActiveCfg = Release-15400|ARM
+		{8E7B7EB3-114B-48C4-8987-38E63DDCA09D}.Release-14500|ARM.Build.0 = Release-15400|ARM
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F69991F6-E3C3-424E-8C05-AFA16358F418}
+	EndGlobalSection
+EndGlobal

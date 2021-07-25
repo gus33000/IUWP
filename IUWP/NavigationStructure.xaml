@@ -1,0 +1,29 @@
+﻿<NavigationItem xmlns="using:Intense.Presentation"                            
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:pages="using:IUWP.Pages"
+                x:Class="IUWP.NavigationStructure"
+                DisplayName="IUWP"
+                Icon="">
+    
+    <NavigationItem DisplayName="IU Tasks" Description="Execute IU Tasks on this device" Icon="">
+        <NavigationItem DisplayName="Install packages" PageType="pages:InstallPackagesPage" />
+        <NavigationItem DisplayName="Device Update Service" PageType="pages:DUSvcPage" />
+    </NavigationItem>
+    
+    <NavigationItem DisplayName="IU Information" Description="Get IU information about this device" Icon="">
+        <NavigationItem DisplayName="Installed packages" PageType="pages:InstalledPackagesPage" />
+        <NavigationItem DisplayName="ROM Information" PageType="pages:ROMInfoPage" />
+    </NavigationItem>
+    
+    <NavigationItem DisplayName="IU Traces" Description="Get IU Traces / logs about this device" Icon="">
+        <NavigationItem DisplayName="Update Logs" PageType="pages:LogsPage" />
+        <NavigationItem DisplayName="Update History" PageType="pages:UpdateHistoryPage" />
+    </NavigationItem>
+    
+    <NavigationItem DisplayName="Settings" Description="Change the app configuration" Icon="">
+        <NavigationItem DisplayName="Appearance" PageType="pages:AppearancePage" />
+    </NavigationItem>
+    
+</NavigationItem>
+
+    

@@ -1,0 +1,163 @@
+﻿<Page
+    x:Class="IUWP.Pages.ROMInfoPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:IUWP.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid>
+        <ProgressRing Margin="{x:Bind Frame.Padding, Mode=OneWay}" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="ProgressRing" IsActive="True"/>
+        <ScrollViewer Visibility="Collapsed" x:Name="MainScroll" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="{x:Bind Frame.Padding, Mode=OneWay}">
+            <StackPanel>
+                <TextBlock Text="ROM Information" Style="{StaticResource TitleTextBlockStyle}" />
+                <TextBlock Text="You can find below information about the current rom installed on your device." Style="{StaticResource ParagraphTextBlockStyle}" />
+
+                <StackPanel>
+                    <TextBlock Text="Device Platform ID"/>
+                    <TextBlock x:Name="Platid" TextWrapping="Wrap" Foreground="{ThemeResource SystemControlForegroundAccentBrush}"/>
+                </StackPanel>
+
+                <StackPanel Margin="0,6,0,0">
+                    <TextBlock Text="Description"/>
+                    <TextBlock x:Name="Desc" TextWrapping="Wrap" Foreground="{ThemeResource SystemControlForegroundAccentBrush}"/>
+                </StackPanel>
+
+                <StackPanel Margin="0,6,0,0">
+                    <TextBlock Text="System Vendor"/>
+                    <TextBlock x:Name="SV" TextWrapping="Wrap" Foreground="{ThemeResource SystemControlForegroundAccentBrush}"/>
+                </StackPanel>
+
+                <StackPanel Margin="0,6,0,0">
+                    <TextBlock Text="SoC"/>
+                    <TextBlock x:Name="SOC" TextWrapping="Wrap" Foreground="{ThemeResource SystemControlForegroundAccentBrush}"/>
+                </StackPanel>
+
+                <StackPanel Margin="0,6,0,0">
+                    <TextBlock Text="Device"/>
+                    <TextBlock x:Name="Device" TextWrapping="Wrap" Foreground="{ThemeResource SystemControlForegroundAccentBrush}"/>
+                </StackPanel>
+
+                <StackPanel Margin="0,6,0,0">
+                    <TextBlock Text="Release Type"/>
+                    <TextBlock x:Name="RelType" TextWrapping="Wrap" Foreground="{ThemeResource SystemControlForegroundAccentBrush}"/>
+                </StackPanel>
+
+                <StackPanel Margin="0,6,0,0">
+                    <TextBlock Text="Build Type"/>
+                    <TextBlock x:Name="BldType" TextWrapping="Wrap" Foreground="{ThemeResource SystemControlForegroundAccentBrush}"/>
+                </StackPanel>
+
+                <StackPanel Margin="0,6,0,0">
+                    <TextBlock Text="Boot UI Language"/>
+                    <TextBlock x:Name="BootUILp" TextWrapping="Wrap" Foreground="{ThemeResource SystemControlForegroundAccentBrush}"/>
+                </StackPanel>
+
+                <StackPanel Margin="0,6,0,0">
+                    <TextBlock Text="Boot Locale"/>
+                    <TextBlock x:Name="BootLoc" TextWrapping="Wrap" Foreground="{ThemeResource SystemControlForegroundAccentBrush}"/>
+                </StackPanel>
+
+                <TextBlock Margin="0,12,0,0" Text="Supported Languages" Style="{StaticResource SubtitleTextBlockStyle}" />
+                <TextBlock Margin="0,19,0,34" Text="Supported user interface languages:" Style="{StaticResource ParagraphTextBlockStyle}" />
+                <ListView Margin="0,-12,0,0" x:Name="UILpsLst" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollMode="Disabled" SelectionMode="None" IsHitTestVisible="False">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            <Setter Property="Margin" Value="-12,0,-12,0" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" Foreground="{ThemeResource SystemControlForegroundAccentBrush}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <TextBlock Margin="0,19,0,34" Text="Supported keyboard languages:" Style="{StaticResource ParagraphTextBlockStyle}" />
+                <ListView Margin="0,-12,0,0" x:Name="KbLpsLst" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollMode="Disabled" SelectionMode="None" IsHitTestVisible="False">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            <Setter Property="Margin" Value="-12,0,-12,0" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" Foreground="{ThemeResource SystemControlForegroundAccentBrush}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <TextBlock Margin="0,19,0,34" Text="Supported speech languages:" Style="{StaticResource ParagraphTextBlockStyle}" />
+                <ListView Margin="0,-12,0,0" x:Name="SpLpsLst" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollMode="Disabled" SelectionMode="None" IsHitTestVisible="False">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            <Setter Property="Margin" Value="-12,0,-12,0" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" Foreground="{ThemeResource SystemControlForegroundAccentBrush}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <TextBlock Margin="0,12,0,0" Text="Resolutions" Style="{StaticResource SubtitleTextBlockStyle}" />
+                <TextBlock Margin="0,19,0,34" Text="Supported resolutions:" Style="{StaticResource ParagraphTextBlockStyle}" />
+                <ListView Margin="0,-12,0,0" x:Name="ResLst" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollMode="Disabled" SelectionMode="None" IsHitTestVisible="False">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            <Setter Property="Margin" Value="-12,0,-12,0" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" Foreground="{ThemeResource SystemControlForegroundAccentBrush}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <TextBlock Margin="0,12,0,0" Text="Features" Style="{StaticResource SubtitleTextBlockStyle}" />
+                <TextBlock Margin="0,19,0,34" Text="Microsoft Features:" Style="{StaticResource ParagraphTextBlockStyle}" />
+                <ListView Margin="0,-12,0,0" x:Name="MSFtLst" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollMode="Disabled" SelectionMode="None" IsHitTestVisible="False">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            <Setter Property="Margin" Value="-12,0,-12,0" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" Foreground="{ThemeResource SystemControlForegroundAccentBrush}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <TextBlock Margin="0,19,0,34" Text="OEM Features:" Style="{StaticResource ParagraphTextBlockStyle}" />
+                <ListView Margin="0,-12,0,0" x:Name="OEMFtLst" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollMode="Disabled" SelectionMode="None" IsHitTestVisible="False">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            <Setter Property="Margin" Value="-12,0,-12,0" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" Foreground="{ThemeResource SystemControlForegroundAccentBrush}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

@@ -1,0 +1,60 @@
+﻿<Page
+    x:Class="IUWP.Pages.LogsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:IUWP.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid>
+        <ProgressRing Margin="{x:Bind Frame.Padding, Mode=OneWay}" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="ProgressRing" IsActive="True"/>
+        <Grid Visibility="Collapsed" x:Name="MainScroll" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <StackPanel Padding="{x:Bind Frame.Padding, Mode=OneWay}">
+                <TextBlock Text="Update Logs" Style="{StaticResource TitleTextBlockStyle}" />
+                <TextBlock Text="You can find below logs of your last package install." Style="{StaticResource ParagraphTextBlockStyle}" />
+
+                <ComboBox Margin="0,0,0,16" x:Name="LogComboBox" SelectedIndex="0" SelectionChanged="LogComboBox_SelectionChanged">
+                    <ComboBoxItem>ImgUpd.log</ComboBoxItem>
+                    <ComboBoxItem>ImgUpd.log.cbs.log</ComboBoxItem>
+                    <ComboBoxItem>UpdateAgent.log</ComboBoxItem>
+                    <ComboBoxItem>FlushEtwSessions.log</ComboBoxItem>
+                    <ComboBoxItem>ReportingEvents.log</ComboBoxItem>
+                    <ComboBoxItem>ResetLog.txt</ComboBoxItem>
+                    <ComboBoxItem>UpdateTaskSchedules.txt</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+
+            <ListView Padding="{x:Bind Frame.Padding, Mode=OneWay}" Grid.Row="1" x:Name="LList" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsItemClickEnabled="False" SelectionMode="None" ScrollViewer.VerticalScrollMode="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="Padding" Value="0" />
+                        <Setter Property="Margin" Value="0" />
+                        <Setter Property="BorderThickness" Value="0" />
+                        <Setter Property="VerticalContentAlignment" Value="Top" />
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        <Setter Property="IsHitTestVisible" Value="False"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListViewItem">
+                                    <ListViewItemPresenter ContentMargin="0" Padding="0" />
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" TextWrapping="Wrap"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Grid>
+</Page>
